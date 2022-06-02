@@ -1,0 +1,47 @@
+
+<div class="bootstrap-wrapper">
+  <div class="row">
+        <div>
+            <app-sliderbar></app-sliderbar> 
+        </div> 
+        <div class="col-md-6">
+          <div >
+            <h3>Create Form</h3>
+
+            <mat-card-content>
+    
+              <form [formGroup]="formGroup" (ngSubmit)="submit()" *ngIf="formGroup">
+                <div  *ngFor="let f of columns">
+                <!-- Label(Column Name) -->
+                <mat-form-field class="ml20 mr10" appearance="outline">
+                  <mat-label>{{f.label}}</mat-label>
+                  <!-- [formControl]="label" -->
+                  <input
+                   name="{{f.label}}" 
+                   type="{{f.type}}"
+                   required="{{f.compulsory}}"
+                   matInput formControlName="{{f.label}}"
+                   
+                      
+                  >
+                </mat-form-field>
+    {{formGroup.value | json}}
+              </div>
+              <div class="container text-center mt15">
+
+                <!--  after click save form to be generate the data for create-form.html table-->
+                <!-- (click)="addRow()"  -->
+                      <button  mat-raised-button color="primary">
+                       Save Form
+                      </button>
+                      <button class="ml20" mat-button mat-dialog-close>Cancel</button>
+                </div>
+              </form>
+            </mat-card-content>
+          </div>
+          <!-- save button -->
+    
+  </div>
+</div>
+
+

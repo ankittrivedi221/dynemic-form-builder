@@ -1,0 +1,77 @@
+<h3>Create Field</h3>
+<mat-card>
+
+  <div class="bootstrap-wrapper">
+
+    <div class="row">
+
+      <div>
+
+        <mat-card-content>
+
+          <form>
+
+            <!-- Label(Column Name) -->
+            <mat-form-field class="ml20 mr10" appearance="outline">
+              <mat-label>Label</mat-label>
+              <!-- [formControl]="label" -->
+              <input required autofocus type="text" name="label" [formControl]="label"
+                     matInput placeholder="Enter Here"/>
+            </mat-form-field>
+
+            <!-- Column Type -->
+            <mat-form-field class="ml20 mr10" appearance="outline">
+              <mat-label>Column Type</mat-label>
+              <!-- [formControl]="type"  -->
+              <mat-select [formControl]="type">
+                <mat-option value="Text">Text</mat-option>
+                <mat-option value="Number">Number</mat-option>
+                <mat-option value="Textarea">Textarea</mat-option>
+                <mat-option value="Date">Date</mat-option>
+                <mat-option value="Time">Time</mat-option>
+                <mat-option value="Email">Email</mat-option>
+                <mat-option value="checkbox">Checkbox</mat-option>
+                <mat-option value="Dropdown">Dropdown</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- Field Compulsory or not -->
+            <!-- [formControl]="compulsory" -->
+            <mat-slide-toggle [formControl]="compulsory" checked="false" class="ml20">Compulsory</mat-slide-toggle>
+            <!--      &lt;!&ndash;        Menu For Actions Button&ndash;&gt;
+                  <button style="margin-left: 80px;"
+                          class="actionLast" mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon color="primary">more_horiz</mat-icon>
+                  </button>
+
+                  <mat-menu class="mat-menu-panel-1" #menu="matMenu">
+
+                    <button mat-menu-item>
+                      <mat-icon>update</mat-icon>
+                      <span>Update</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>delete_outline</mat-icon>
+                      <span>Delete</span>
+                    </button>
+                  </mat-menu>-->
+          </form>
+        </mat-card-content>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+
+<br>
+<!-- save button -->
+<div class="container text-center mt15">
+
+  <!--  after click save form to be generate the data for create-form.html table-->
+  <button (click)="addRow()"  mat-raised-button color="primary">
+    Save Form
+  </button>
+
+  <!--  reset the data to write in this form-->
+  <button class="ml20" mat-button mat-dialog-close>Cancel</button>
+</div>

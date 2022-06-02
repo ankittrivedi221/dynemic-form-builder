@@ -1,0 +1,30 @@
+<mat-card>
+              
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <button routerLink="/fildform"  mat-button color="primary">Form</button>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+        <mat-action-list>    
+            <button mat-button color="primary" [routerLink]="'/formbuildFields/'+f.formId" *ngFor="let f of formdata" ><mat-icon>list</mat-icon>{{ f.name }}</button>
+        </mat-action-list>
+    </mat-expansion-panel>
+
+    <mat-accordion>
+      
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             Edit Form
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-action-list>    
+            <button mat-button  routerLink="/fildform"  color="primary" *ngFor="let f of formdata" ><mat-icon>list</mat-icon>{{ f.name }}</button>
+          </mat-action-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+</mat-card>
+
